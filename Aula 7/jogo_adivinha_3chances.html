@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<script>
+	
+	function pulaLinha() {
+	
+		document.write("<br><br>"); //estou pulando 2 linhas
+		
+	}
+	
+	function mostra(frase) {
+	
+		document.write(frase);
+		pulaLinha();
+	
+	}
+
+	function sorteia() {
+		
+		return Math.round(Math.random() * 100);
+
+	}
+
+	var numeroPensado = sorteia();
+	console.log(numeroPensado);// esse comando serve para testar mostrando qual a resposta no console
+
+	var chances = 1;
+
+	while (chances <= 3) {
+		
+		var chute = parseInt(prompt("Qual você acha que é? Chance[" + chances + "/3]"));
+		
+		if (chute == numeroPensado) {
+
+			mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+			break;
+		
+		} else {
+
+			mostra("Você errou!");
+		}
+		
+		chances++;
+
+	}
+
+	mostra("FIM");
+
+</script>
